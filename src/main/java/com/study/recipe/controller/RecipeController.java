@@ -15,11 +15,16 @@ public class RecipeController {
 
     public RecipeController(RecipeService recipeService) {
         this.recipeService = recipeService;
+
+        initRecipes();
+    }
+
+    private void initRecipes() {
+        this.recipeService.initRecipes();
     }
 
     @GetMapping("/list")
     public List<Recipe> findAll(Model model){
-        recipeService.save();
         List<Recipe> recipes = this.recipeService.findAll();
         model.addAttribute("recipes", recipes);
         return recipes;

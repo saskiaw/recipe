@@ -23,7 +23,7 @@ public class RecipeService {
         return this.recipeRepository.findAll();
     }
 
-    public void save() {
+    public void initRecipes() {
         Recipe recipe = new Recipe();
         recipe.setName("Chicken curry");
         saveIngredient(recipe, "1 tbsp vegetable oil");
